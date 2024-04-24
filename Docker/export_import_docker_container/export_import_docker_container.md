@@ -1,5 +1,7 @@
 # We must first export the container as an image
 
+- Please note exporting an image will not export the data inside it.
+
 ```bash
 docker commit [ContainerID] [ContainerName:Tag]
 ```
