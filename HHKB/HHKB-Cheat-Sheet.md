@@ -1,0 +1,1 @@
+- **`FN + SHIFT + TAB`**: CAPS
