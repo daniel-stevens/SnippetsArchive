@@ -1,3 +1,5 @@
+diskutil list
+
 diskutil unmountDisk /dev/disk16
 diskutil partitionDisk /dev/disk16 GPT JHFS+ Temp 100%
 diskutil apfs createContainer /dev/disk16s2
