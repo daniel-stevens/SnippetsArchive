@@ -1,0 +1,9 @@
+[SnippetsArchive]
+checkout = git clone git@github.com:daniel-stevens/SnippetsArchive.git
+
+[repo2]
+checkout = git clone git@example.com:repo1.git
+
+[repo3]
+checkout = git clone git@example.com:repo2.git
+
