@@ -1,0 +1,85 @@
+[
+  // ── PyCharm-style shortcuts ────────────────────────────────
+  // Duplicate line (PyCharm: Cmd+D)
+  {
+    "key": "cmd+d",
+    "command": "editor.action.copyLinesDownAction",
+    "when": "editorTextFocus && !editorHasSelection"
+  },
+  // Delete line (PyCharm: Cmd+Backspace)
+  {
+    "key": "cmd+backspace",
+    "command": "editor.action.deleteLines",
+    "when": "editorTextFocus"
+  },
+  // Move line up/down (PyCharm: Alt+Shift+Up/Down)
+  {
+    "key": "alt+shift+up",
+    "command": "editor.action.moveLinesUpAction",
+    "when": "editorTextFocus"
+  },
+  {
+    "key": "alt+shift+down",
+    "command": "editor.action.moveLinesDownAction",
+    "when": "editorTextFocus"
+  },
+  // Go to definition (PyCharm: Cmd+B)
+  {
+    "key": "cmd+b",
+    "command": "editor.action.revealDefinition",
+    "when": "editorTextFocus"
+  },
+  // Find usages (PyCharm: Alt+F7)
+  {
+    "key": "alt+f7",
+    "command": "references-view.findReferences",
+    "when": "editorTextFocus"
+  },
+  // Rename symbol (PyCharm: Shift+F6)
+  {
+    "key": "shift+f6",
+    "command": "editor.action.rename",
+    "when": "editorTextFocus"
+  },
+  // Reformat code (PyCharm: Cmd+Alt+L)
+  {
+    "key": "cmd+alt+l",
+    "command": "editor.action.formatDocument",
+    "when": "editorTextFocus"
+  },
+  // Toggle terminal (PyCharm: Alt+F12)
+  {
+    "key": "alt+f12",
+    "command": "workbench.action.terminal.toggleTerminal"
+  },
+  // Run file (PyCharm: Ctrl+Shift+F10)
+  {
+    "key": "ctrl+shift+f10",
+    "command": "workbench.action.debug.run"
+  },
+  // Quick fix (PyCharm: Alt+Enter)
+  {
+    "key": "alt+enter",
+    "command": "editor.action.quickFix",
+    "when": "editorTextFocus"
+  },
+  // Navigate back/forward (PyCharm: Cmd+[ / Cmd+])
+  {
+    "key": "cmd+[",
+    "command": "workbench.action.navigateBack"
+  },
+  {
+    "key": "cmd+]",
+    "command": "workbench.action.navigateForward"
+  },
+  // Close tab (PyCharm: Cmd+W)
+  {
+    "key": "cmd+w",
+    "command": "workbench.action.closeActiveEditor"
+  },
+  // Toggle sidebar (quick access)
+  {
+    "key": "cmd+1",
+    "command": "workbench.action.toggleSidebarVisibility"
+  }
+]
