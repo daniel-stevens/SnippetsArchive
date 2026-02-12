@@ -1,6 +1,6 @@
-# VS Code Config (HHKB Optimised)
+# VS Code Config (HHKB Type-S Optimised)
 
-Pro-level VS Code setup with PyCharm Darcula theme, JetBrains Mono font, and keybindings optimised for the **HHKB** (no F-key or arrow key shortcuts).
+Pro-level VS Code setup with PyCharm Darcula theme, JetBrains Mono font, and keybindings fully optimised for the **HHKB Type-S** — zero F-keys, zero arrow keys, everything reachable without Fn.
 
 ## Quick Setup
 
@@ -12,9 +12,17 @@ This installs all extensions, copies settings & keybindings, and installs JetBra
 
 ---
 
+## HHKB DIP Switch (Recommended)
+
+For macOS, set your HHKB DIP switches:
+- **SW1**: OFF (default Delete key behaviour)
+- **SW2**: ON (Mac mode — diamond keys become Cmd)
+
+---
+
 ## Keyboard Shortcuts
 
-All shortcuts avoid F-keys and arrow keys so they work natively on the HHKB without needing Fn.
+Every shortcut avoids F-keys and arrow keys. All designed around the HHKB layout where Control is at the Caps Lock position.
 
 ### Editing
 
@@ -26,6 +34,19 @@ All shortcuts avoid F-keys and arrow keys so they work natively on the HHKB with
 | `Ctrl + Shift + J` | Move line down |
 | `Cmd + Alt + L` | Reformat / format code |
 | `Alt + Enter` | Quick fix |
+
+### Autocomplete & List Navigation
+
+Navigate suggestions and menus without arrow keys:
+
+| Shortcut | Action |
+|---|---|
+| `Ctrl + J` | Next suggestion / next item in list |
+| `Ctrl + K` | Previous suggestion / previous item in list |
+| `Tab` / `Enter` | Accept suggestion |
+| `Escape` | Dismiss |
+
+> Works in autocomplete popups, Cmd+P quick open, and the command palette.
 
 ### Navigation
 
@@ -56,12 +77,19 @@ All shortcuts avoid F-keys and arrow keys so they work natively on the HHKB with
 
 ### Run & Debug
 
+All debug shortcuts avoid F5/F10/F11 — fully HHKB native:
+
 | Shortcut | Action |
 |---|---|
-| `Cmd + R` | Run (without debugging) |
+| `Cmd + R` | Run without debugging |
+| `Cmd + Shift + D` | Start / continue debugging |
+| `Ctrl + Shift + O` | Step over (when debugging) |
+| `Ctrl + Shift + I` | Step into (when debugging) |
+| `Ctrl + Shift + T` | Step out (when debugging) |
+| `Cmd + Shift + Q` | Stop debugging |
 | `Cmd + Shift + B` | Toggle breakpoint |
 
-### Built-in VS Code (unchanged)
+### Built-in VS Code (unchanged, HHKB friendly)
 
 | Shortcut | Action |
 |---|---|
@@ -76,13 +104,15 @@ All shortcuts avoid F-keys and arrow keys so they work natively on the HHKB with
 
 ---
 
-## HHKB Notes
+## HHKB Type-S Notes
 
-- **Control** is where Caps Lock normally is — all `Ctrl+` combos are ergonomic
-- **Backtick** is a native key — `` Ctrl+` `` for terminal works perfectly
-- **Move line** uses `Ctrl+Shift+J/K` (vim-style) instead of arrow keys
-- **No F-key shortcuts** — rename, references, terminal, and run all use letter combos
-- Vim extension is installed — if you use it, `h/j/k/l` replaces arrow keys in the editor
+- **Control** is where Caps Lock normally is — all `Ctrl+` combos are natural and ergonomic
+- **Backtick** is a native key (top-right) — `` Ctrl+` `` for terminal works perfectly
+- **Move line** uses `Ctrl+Shift+J/K` (vim-style j=down, k=up) instead of arrow keys
+- **Autocomplete navigation** uses `Ctrl+J/K` instead of arrow keys
+- **Debug stepping** uses `Ctrl+Shift+O/I/T` instead of F10/F11/Shift+F11
+- **No shortcut requires Fn** — every binding uses native HHKB keys only
+- **Vim extension** is installed — `h/j/k/l` replaces arrow keys in the editor
 
 ## Theme & Appearance
 

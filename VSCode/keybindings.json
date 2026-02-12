@@ -1,7 +1,8 @@
 [
-  // ── HHKB-Optimised VS Code Shortcuts ─────────────────────
-  // No F-keys or arrow keys required. All reachable without Fn.
-  // HHKB Control key (where Caps Lock is) makes Ctrl combos ergonomic.
+  // ── HHKB Type-S Optimised VS Code Shortcuts ──────────────
+  // Zero F-keys. Zero arrow keys. Everything reachable without Fn.
+  // HHKB Control is at Caps Lock position — Ctrl combos are ergonomic.
+  // Backtick is a native HHKB key (top-right) — Ctrl+` works natively.
 
   // ── Editing ──────────────────────────────────────────────
   // Duplicate line
@@ -16,7 +17,7 @@
     "command": "editor.action.deleteLines",
     "when": "editorTextFocus"
   },
-  // Move line up/down (Fn-free alternatives using Ctrl+Shift+J/K — vim style)
+  // Move line up/down (vim-style J/K instead of arrows)
   {
     "key": "ctrl+shift+k",
     "command": "editor.action.moveLinesUpAction",
@@ -26,6 +27,30 @@
     "key": "ctrl+shift+j",
     "command": "editor.action.moveLinesDownAction",
     "when": "editorTextFocus"
+  },
+
+  // ── Autocomplete & List Navigation (replaces arrow keys) ─
+  // Navigate suggestions with Ctrl+J/K instead of Up/Down
+  {
+    "key": "ctrl+j",
+    "command": "selectNextSuggestion",
+    "when": "suggestWidgetMultipleSuggestions && suggestWidgetVisible && textInputFocus"
+  },
+  {
+    "key": "ctrl+k",
+    "command": "selectPrevSuggestion",
+    "when": "suggestWidgetMultipleSuggestions && suggestWidgetVisible && textInputFocus"
+  },
+  // Navigate quick open / command palette with Ctrl+J/K
+  {
+    "key": "ctrl+j",
+    "command": "workbench.action.quickOpenSelectNext",
+    "when": "inQuickOpen"
+  },
+  {
+    "key": "ctrl+k",
+    "command": "workbench.action.quickOpenSelectPrevious",
+    "when": "inQuickOpen"
   },
 
   // ── Navigation ───────────────────────────────────────────
@@ -82,7 +107,7 @@
   },
 
   // ── Panels & UI ──────────────────────────────────────────
-  // Toggle terminal (replaces Alt+F12 — backtick is native on HHKB)
+  // Toggle terminal (backtick is native on HHKB top-right)
   {
     "key": "ctrl+`",
     "command": "workbench.action.terminal.toggleTerminal"
@@ -103,11 +128,47 @@
     "command": "workbench.action.closeActiveEditor"
   },
 
-  // ── Run & Debug ──────────────────────────────────────────
+  // ── Run & Debug (replaces F5/F10/F11) ────────────────────
   // Run without debugging (replaces Ctrl+Shift+F10)
   {
     "key": "cmd+r",
     "command": "workbench.action.debug.run"
+  },
+  // Start debugging (replaces F5)
+  {
+    "key": "cmd+shift+d",
+    "command": "workbench.action.debug.start",
+    "when": "!inDebugMode"
+  },
+  // Continue debugging (replaces F5 while debugging)
+  {
+    "key": "cmd+shift+d",
+    "command": "workbench.action.debug.continue",
+    "when": "inDebugMode"
+  },
+  // Step over (replaces F10)
+  {
+    "key": "ctrl+shift+o",
+    "command": "workbench.action.debug.stepOver",
+    "when": "inDebugMode"
+  },
+  // Step into (replaces F11)
+  {
+    "key": "ctrl+shift+i",
+    "command": "workbench.action.debug.stepInto",
+    "when": "inDebugMode"
+  },
+  // Step out (replaces Shift+F11)
+  {
+    "key": "ctrl+shift+t",
+    "command": "workbench.action.debug.stepOut",
+    "when": "inDebugMode"
+  },
+  // Stop debugging (replaces Shift+F5)
+  {
+    "key": "cmd+shift+q",
+    "command": "workbench.action.debug.stop",
+    "when": "inDebugMode"
   },
   // Toggle breakpoint
   {
