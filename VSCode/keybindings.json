@@ -1,69 +1,47 @@
 [
-  // ── PyCharm-style shortcuts ────────────────────────────────
-  // Duplicate line (PyCharm: Cmd+D)
+  // ── HHKB-Optimised VS Code Shortcuts ─────────────────────
+  // No F-keys or arrow keys required. All reachable without Fn.
+  // HHKB Control key (where Caps Lock is) makes Ctrl combos ergonomic.
+
+  // ── Editing ──────────────────────────────────────────────
+  // Duplicate line
   {
     "key": "cmd+d",
     "command": "editor.action.copyLinesDownAction",
     "when": "editorTextFocus && !editorHasSelection"
   },
-  // Delete line (PyCharm: Cmd+Backspace)
+  // Delete line
   {
     "key": "cmd+backspace",
     "command": "editor.action.deleteLines",
     "when": "editorTextFocus"
   },
-  // Move line up/down (PyCharm: Alt+Shift+Up/Down)
+  // Move line up/down (Fn-free alternatives using Ctrl+Shift+J/K — vim style)
   {
-    "key": "alt+shift+up",
+    "key": "ctrl+shift+k",
     "command": "editor.action.moveLinesUpAction",
     "when": "editorTextFocus"
   },
   {
-    "key": "alt+shift+down",
+    "key": "ctrl+shift+j",
     "command": "editor.action.moveLinesDownAction",
     "when": "editorTextFocus"
   },
-  // Go to definition (PyCharm: Cmd+B)
+
+  // ── Navigation ───────────────────────────────────────────
+  // Go to definition
   {
     "key": "cmd+b",
     "command": "editor.action.revealDefinition",
     "when": "editorTextFocus"
   },
-  // Find usages (PyCharm: Alt+F7)
+  // Find all references / usages (replaces Alt+F7)
   {
-    "key": "alt+f7",
+    "key": "ctrl+shift+u",
     "command": "references-view.findReferences",
     "when": "editorTextFocus"
   },
-  // Rename symbol (PyCharm: Shift+F6)
-  {
-    "key": "shift+f6",
-    "command": "editor.action.rename",
-    "when": "editorTextFocus"
-  },
-  // Reformat code (PyCharm: Cmd+Alt+L)
-  {
-    "key": "cmd+alt+l",
-    "command": "editor.action.formatDocument",
-    "when": "editorTextFocus"
-  },
-  // Toggle terminal (PyCharm: Alt+F12)
-  {
-    "key": "alt+f12",
-    "command": "workbench.action.terminal.toggleTerminal"
-  },
-  // Run file (PyCharm: Ctrl+Shift+F10)
-  {
-    "key": "ctrl+shift+f10",
-    "command": "workbench.action.debug.run"
-  },
-  // Quick fix (PyCharm: Alt+Enter)
-  {
-    "key": "alt+enter",
-    "command": "editor.action.quickFix",
-    "when": "editorTextFocus"
-  },
-  // Navigate back/forward (PyCharm: Cmd+[ / Cmd+])
+  // Navigate back/forward
   {
     "key": "cmd+[",
     "command": "workbench.action.navigateBack"
@@ -72,14 +50,69 @@
     "key": "cmd+]",
     "command": "workbench.action.navigateForward"
   },
-  // Close tab (PyCharm: Cmd+W)
+  // Go to file (quick open)
+  {
+    "key": "cmd+p",
+    "command": "workbench.action.quickOpen"
+  },
+  // Go to symbol in file
+  {
+    "key": "cmd+shift+o",
+    "command": "workbench.action.gotoSymbol"
+  },
+
+  // ── Refactoring ──────────────────────────────────────────
+  // Rename symbol (replaces Shift+F6)
+  {
+    "key": "ctrl+shift+r",
+    "command": "editor.action.rename",
+    "when": "editorTextFocus"
+  },
+  // Quick fix
+  {
+    "key": "alt+enter",
+    "command": "editor.action.quickFix",
+    "when": "editorTextFocus"
+  },
+  // Reformat code
+  {
+    "key": "cmd+alt+l",
+    "command": "editor.action.formatDocument",
+    "when": "editorTextFocus"
+  },
+
+  // ── Panels & UI ──────────────────────────────────────────
+  // Toggle terminal (replaces Alt+F12 — backtick is native on HHKB)
+  {
+    "key": "ctrl+`",
+    "command": "workbench.action.terminal.toggleTerminal"
+  },
+  // Toggle sidebar
+  {
+    "key": "cmd+1",
+    "command": "workbench.action.toggleSidebarVisibility"
+  },
+  // Toggle problems panel
+  {
+    "key": "cmd+shift+m",
+    "command": "workbench.actions.view.problems"
+  },
+  // Close tab
   {
     "key": "cmd+w",
     "command": "workbench.action.closeActiveEditor"
   },
-  // Toggle sidebar (quick access)
+
+  // ── Run & Debug ──────────────────────────────────────────
+  // Run without debugging (replaces Ctrl+Shift+F10)
   {
-    "key": "cmd+1",
-    "command": "workbench.action.toggleSidebarVisibility"
+    "key": "cmd+r",
+    "command": "workbench.action.debug.run"
+  },
+  // Toggle breakpoint
+  {
+    "key": "cmd+shift+b",
+    "command": "editor.debug.action.toggleBreakpoint",
+    "when": "editorTextFocus"
   }
 ]
