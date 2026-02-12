@@ -4,7 +4,10 @@
   // HHKB Control is at Caps Lock position — Ctrl combos are ergonomic.
   // Backtick is a native HHKB key (top-right) — Ctrl+` works natively.
 
-  // ── Editing ──────────────────────────────────────────────
+  // ═══════════════════════════════════════════════════════════
+  // EDITING
+  // ═══════════════════════════════════════════════════════════
+
   // Duplicate line
   {
     "key": "cmd+d",
@@ -28,8 +31,69 @@
     "command": "editor.action.moveLinesDownAction",
     "when": "editorTextFocus"
   },
+  // Toggle line comment
+  {
+    "key": "cmd+/",
+    "command": "editor.action.commentLine",
+    "when": "editorTextFocus"
+  },
+  // Toggle block comment
+  {
+    "key": "cmd+alt+/",
+    "command": "editor.action.blockComment",
+    "when": "editorTextFocus"
+  },
 
-  // ── Autocomplete & List Navigation (replaces arrow keys) ─
+  // ═══════════════════════════════════════════════════════════
+  // MULTI-CURSOR & SELECTION
+  // ═══════════════════════════════════════════════════════════
+
+  // Add cursor above/below (replaces Cmd+Alt+Up/Down arrows)
+  {
+    "key": "ctrl+alt+k",
+    "command": "editor.action.insertCursorAbove",
+    "when": "editorTextFocus"
+  },
+  {
+    "key": "ctrl+alt+j",
+    "command": "editor.action.insertCursorBelow",
+    "when": "editorTextFocus"
+  },
+  // Select all occurrences of current word
+  {
+    "key": "cmd+shift+l",
+    "command": "editor.action.selectHighlights",
+    "when": "editorTextFocus"
+  },
+  // Add next occurrence to selection (multi-cursor one by one)
+  {
+    "key": "cmd+d",
+    "command": "editor.action.addSelectionToNextFindMatch",
+    "when": "editorTextFocus && editorHasSelection"
+  },
+  // Expand selection (word → line → block → file)
+  {
+    "key": "ctrl+shift+e",
+    "command": "editor.action.smartSelect.expand",
+    "when": "editorTextFocus"
+  },
+  // Shrink selection
+  {
+    "key": "ctrl+shift+w",
+    "command": "editor.action.smartSelect.shrink",
+    "when": "editorTextFocus"
+  },
+  // Select current line
+  {
+    "key": "cmd+l",
+    "command": "expandLineSelection",
+    "when": "editorTextFocus"
+  },
+
+  // ═══════════════════════════════════════════════════════════
+  // AUTOCOMPLETE & LIST NAVIGATION (replaces arrow keys)
+  // ═══════════════════════════════════════════════════════════
+
   // Navigate suggestions with Ctrl+J/K instead of Up/Down
   {
     "key": "ctrl+j",
@@ -53,14 +117,23 @@
     "when": "inQuickOpen"
   },
 
-  // ── Navigation ───────────────────────────────────────────
+  // ═══════════════════════════════════════════════════════════
+  // NAVIGATION
+  // ═══════════════════════════════════════════════════════════
+
   // Go to definition
   {
     "key": "cmd+b",
     "command": "editor.action.revealDefinition",
     "when": "editorTextFocus"
   },
-  // Find all references / usages (replaces Alt+F7)
+  // Peek definition (inline popup)
+  {
+    "key": "cmd+alt+b",
+    "command": "editor.action.peekDefinition",
+    "when": "editorTextFocus"
+  },
+  // Find all references / usages
   {
     "key": "ctrl+shift+u",
     "command": "references-view.findReferences",
@@ -85,9 +158,69 @@
     "key": "cmd+shift+o",
     "command": "workbench.action.gotoSymbol"
   },
+  // Go to line number
+  {
+    "key": "ctrl+g",
+    "command": "workbench.action.gotoLine"
+  },
 
-  // ── Refactoring ──────────────────────────────────────────
-  // Rename symbol (replaces Shift+F6)
+  // ═══════════════════════════════════════════════════════════
+  // CODE FOLDING (replaces Cmd+Alt+[ / ] which work but these are clearer)
+  // ═══════════════════════════════════════════════════════════
+
+  // Fold current region
+  {
+    "key": "cmd+alt+[",
+    "command": "editor.fold",
+    "when": "editorTextFocus"
+  },
+  // Unfold current region
+  {
+    "key": "cmd+alt+]",
+    "command": "editor.unfold",
+    "when": "editorTextFocus"
+  },
+  // Fold all
+  {
+    "key": "cmd+k cmd+0",
+    "command": "editor.foldAll"
+  },
+  // Unfold all
+  {
+    "key": "cmd+k cmd+j",
+    "command": "editor.unfoldAll"
+  },
+
+  // ═══════════════════════════════════════════════════════════
+  // FIND & REPLACE
+  // ═══════════════════════════════════════════════════════════
+
+  // Find in file
+  {
+    "key": "cmd+f",
+    "command": "actions.find"
+  },
+  // Replace in file
+  {
+    "key": "cmd+alt+f",
+    "command": "editor.action.startFindReplaceAction"
+  },
+  // Find in all files
+  {
+    "key": "cmd+shift+f",
+    "command": "workbench.action.findInFiles"
+  },
+  // Replace in all files
+  {
+    "key": "cmd+shift+h",
+    "command": "workbench.action.replaceInFiles"
+  },
+
+  // ═══════════════════════════════════════════════════════════
+  // REFACTORING
+  // ═══════════════════════════════════════════════════════════
+
+  // Rename symbol
   {
     "key": "ctrl+shift+r",
     "command": "editor.action.rename",
@@ -105,12 +238,60 @@
     "command": "editor.action.formatDocument",
     "when": "editorTextFocus"
   },
+  // Trigger parameter hints
+  {
+    "key": "ctrl+shift+space",
+    "command": "editor.action.triggerParameterHints",
+    "when": "editorTextFocus"
+  },
 
-  // ── Panels & UI ──────────────────────────────────────────
-  // Toggle terminal (backtick is native on HHKB top-right)
+  // ═══════════════════════════════════════════════════════════
+  // AI / COPILOT (vibe coding essentials)
+  // ═══════════════════════════════════════════════════════════
+
+  // Open Copilot inline chat / edit
+  {
+    "key": "cmd+i",
+    "command": "editor.action.inlineSuggest.trigger",
+    "when": "editorTextFocus"
+  },
+  // Accept Copilot suggestion
+  {
+    "key": "tab",
+    "command": "editor.action.inlineSuggest.commit",
+    "when": "inlineSuggestionVisible && textInputFocus"
+  },
+  // Dismiss Copilot suggestion
+  {
+    "key": "escape",
+    "command": "editor.action.inlineSuggest.hide",
+    "when": "inlineSuggestionVisible && textInputFocus"
+  },
+  // Next/previous Copilot suggestion (no arrows needed)
+  {
+    "key": "alt+]",
+    "command": "editor.action.inlineSuggest.showNext",
+    "when": "inlineSuggestionVisible && textInputFocus"
+  },
+  {
+    "key": "alt+[",
+    "command": "editor.action.inlineSuggest.showPrevious",
+    "when": "inlineSuggestionVisible && textInputFocus"
+  },
+
+  // ═══════════════════════════════════════════════════════════
+  // PANELS & UI
+  // ═══════════════════════════════════════════════════════════
+
+  // Toggle terminal
   {
     "key": "ctrl+`",
     "command": "workbench.action.terminal.toggleTerminal"
+  },
+  // New terminal
+  {
+    "key": "ctrl+shift+`",
+    "command": "workbench.action.terminal.new"
   },
   // Toggle sidebar
   {
@@ -127,44 +308,66 @@
     "key": "cmd+w",
     "command": "workbench.action.closeActiveEditor"
   },
+  // Zen mode (distraction-free vibe coding)
+  {
+    "key": "cmd+k cmd+z",
+    "command": "workbench.action.toggleZenMode"
+  },
+  // Split editor right
+  {
+    "key": "cmd+\\",
+    "command": "workbench.action.splitEditor"
+  },
+  // Focus between editor groups
+  {
+    "key": "cmd+alt+right",
+    "command": "workbench.action.focusNextGroup"
+  },
+  {
+    "key": "cmd+alt+left",
+    "command": "workbench.action.focusPreviousGroup"
+  },
 
-  // ── Run & Debug (replaces F5/F10/F11) ────────────────────
-  // Run without debugging (replaces Ctrl+Shift+F10)
+  // ═══════════════════════════════════════════════════════════
+  // RUN & DEBUG (replaces F5/F10/F11)
+  // ═══════════════════════════════════════════════════════════
+
+  // Run without debugging
   {
     "key": "cmd+r",
     "command": "workbench.action.debug.run"
   },
-  // Start debugging (replaces F5)
+  // Start debugging
   {
     "key": "cmd+shift+d",
     "command": "workbench.action.debug.start",
     "when": "!inDebugMode"
   },
-  // Continue debugging (replaces F5 while debugging)
+  // Continue debugging
   {
     "key": "cmd+shift+d",
     "command": "workbench.action.debug.continue",
     "when": "inDebugMode"
   },
-  // Step over (replaces F10)
+  // Step over
   {
     "key": "ctrl+shift+o",
     "command": "workbench.action.debug.stepOver",
     "when": "inDebugMode"
   },
-  // Step into (replaces F11)
+  // Step into
   {
     "key": "ctrl+shift+i",
     "command": "workbench.action.debug.stepInto",
     "when": "inDebugMode"
   },
-  // Step out (replaces Shift+F11)
+  // Step out
   {
     "key": "ctrl+shift+t",
     "command": "workbench.action.debug.stepOut",
     "when": "inDebugMode"
   },
-  // Stop debugging (replaces Shift+F5)
+  // Stop debugging
   {
     "key": "cmd+shift+q",
     "command": "workbench.action.debug.stop",
